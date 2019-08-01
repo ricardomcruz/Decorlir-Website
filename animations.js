@@ -70,10 +70,3 @@ $(window).scroll(function() {
 });
 
 
-
-function copyClipBoard() {
-  var copyText =document.getElementById("no");
-  copyText.select();
-  document.execCommand("copy");
-  alert("Copied the text: " + copyText.value);
-}
