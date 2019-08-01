@@ -115,6 +115,12 @@ header .menu {
   }
 }
 
+.link {
+  position: absolute;
+  margin-top: -15vh;
+  height: 15vh;
+}
+
 .solid {
   background-color: white;
 }
@@ -248,6 +254,7 @@ footer {
   height: 15vh;
   z-index: -1;
   background-color: transparent;
+  padding-bottom: 5%;
 }
 
 @media screen and (min-width: 1200px) {
@@ -286,7 +293,7 @@ footer .conditions {
 }
 
 footer .conditionsdiv {
-  padding-top: 5px;
+  font-size: 0.8em;
 }
 
 footer .social {
@@ -306,7 +313,7 @@ footer .social {
       -ms-flex-align: center;
           align-items: center;
   height: 100%;
-  font-size: 1.8em;
+  font-size: 1.5em;
 }
 
 section {

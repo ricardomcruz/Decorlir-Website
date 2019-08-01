@@ -110,6 +110,13 @@ header{
 }
 
 
+.link{
+  position: absolute;
+  margin-top:-15vh;
+  height: 15vh;
+}
+
+
 .solid{
   background-color:white;
 }
@@ -247,6 +254,7 @@ footer{
   height:15vh;  
   z-index: -1;
   background-color: transparent;
+  padding-bottom:5%;
 
 
 
@@ -262,6 +270,7 @@ footer{
     grid-template-areas:
     "conditions conditions conditions social";
     height: 100%;
+    
   }
   
   .conditions{
@@ -273,7 +282,7 @@ footer{
   }
 
   .conditionsdiv{
-    padding-top: 5px;
+    font-size:0.8em;
   }
   
   .social{
@@ -283,7 +292,7 @@ footer{
     flex-direction: row;
     align-items:center;
     height: 100%;
-    font-size: 1.8em;
+    font-size: 1.5em;
 
   }
   
