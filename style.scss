@@ -10,6 +10,12 @@ $break-laptop: 1600px;
 
 
 
+html {
+  scroll-behavior: smooth;
+}
+
+
+
 //reset parameters
 
 body {
@@ -17,7 +23,10 @@ body {
   height:100%;
   margin:0;
   padding:0;
-  font-family: 'Rubik', sans-serif; 
+  font-family: 'Rubik', sans-serif;
+
+  
+
 }
 
 ul{
@@ -256,6 +265,10 @@ footer{
   background-color: transparent;
   padding-bottom:5%;
 
+  @media screen and (min-width: $break-phone) {
+    padding-bottom: 0%;
+  }
+
 
 
   @media screen and (min-width: $break-tablet) {
@@ -279,10 +292,31 @@ footer{
     display: flex;
     justify-content: space-around;
     flex-direction: column;
+
+
+    @media screen and (min-width: $break-phone) {
+      flex-direction: row;
+      justify-content:flex-start;
+      
+     
+    }
+
+
   }
 
   .conditionsdiv{
     font-size:0.8em;
+    @media screen and (min-width: $break-phone) {
+      padding-right: 15px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-content: center;
+      
+     
+    }
+   
+
   }
   
   .social{
