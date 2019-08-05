@@ -224,13 +224,19 @@ header{
 
   @media screen and (min-width: 1200px) {
     max-width: $break-laptop;
-    display:flex;
+    display:grid;
     opacity: 1;
-    flex-direction: row;
-    grid-area: menu;
+    position:fixed;
+    top:7vh;
+    right:5vh;
     height: 100%;
     background-color: initial;
     box-shadow: initial;
+
+    a{
+      padding-left:10%;
+    }
+
   }
 
   a{
@@ -547,10 +553,10 @@ section{
 
 .slider {
   width: 90vw;
-  height: 90%;
+  height: 65vh;
   background: black;
   overflow: hidden;
-  margin: 10% 0;
+  margin: 5vh 0;
   position: relative;
 }
 
