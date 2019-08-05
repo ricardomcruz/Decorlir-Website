@@ -1,4 +1,4 @@
-
+/*
 var doc, bod, htm;
 addEventListener('load', function(){
 
@@ -10,3 +10,5 @@ addEventListener('load', function(){
     
   });
 });
+
+*/

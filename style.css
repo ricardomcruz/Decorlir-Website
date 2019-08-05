@@ -309,7 +309,6 @@ footer {
 @media screen and (min-width: 1200px) {
   footer {
     position: fixed;
-    background-color: gainsboro;
   }
 }
 

@@ -6,20 +6,66 @@
 
 var scrollPosition = window.scrollY;
 var headerHeight= document.querySelector('header').offsetHeight;
+
+var windowHeight= screen.height;
+
+var changeToOpaque = windowHeight - headerHeight;
+
+console.log(windowHeight);
+console.log(changeToOpaque)
+console.log(scrollPosition);
+
+
 var logo= document.querySelector('.logo');
 
 window.addEventListener('scroll', function() {
+  
+  scrollPosition = window.scrollY;
+  
+  if (scrollPosition >= windowHeight) {
+    document.querySelector('header').classList.add('opaque');
+    document.getElementById("logo").src = "img/estudonovologo.png";
 
-    scrollPosition = window.scrollY;
+    $('#logo').css({
+      '-moz-transform': 'rotate(0deg)',
+      '-webkit-transform': 'rotate(0deg)',
+      '-o-transform': 'rotate(0deg)',
+      '-ms-transform': 'rotate(0deg)',
+      'transform': 'rotate(0deg)',
+    });
 
-    if (scrollPosition >= headerHeight*7) {
-      document.querySelector('header').classList.add('opaque');
-      logo.src="img/estudonovologo.png"
-    } else {
-      document.querySelector('header').classList.remove('opaque');
-      logo.src="img/logo.png"
-    }
 
+    
+
+
+
+
+  } else {
+    document.querySelector('header').classList.remove('opaque');
+    document.getElementById("logo").src = "img/logo.png";
+    
+    
+   
+      
+      // get the variable of how far we've scrolled from the top
+      var offset = $(window).scrollTop();
+      offset     = offset * 0.1;
+      
+      // add css transform with the offset variable
+      $('#logo').css({
+        '-moz-transform': 'rotate(' + offset + 'deg)',
+        '-webkit-transform': 'rotate(' + offset + 'deg)',
+        '-o-transform': 'rotate(' + offset + 'deg)',
+        '-ms-transform': 'rotate(' + offset + 'deg)',
+        'transform': 'rotate(' + offset + 'deg)',
+      });
+      
+   
+    
+    
+    
+  }
+  
 });
 
 
@@ -75,22 +121,8 @@ var secondScrollSrc = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT9w
 
 
 
-$(window).scroll(function() {
-  
-  // get the variable of how far we've scrolled from the top
-  var offset = $(window).scrollTop();
-  offset     = offset * 0.1;
-  
-  // add css transform with the offset variable
-  $('#logo').css({
-    '-moz-transform': 'rotate(' + offset + 'deg)',
-    '-webkit-transform': 'rotate(' + offset + 'deg)',
-    '-o-transform': 'rotate(' + offset + 'deg)',
-    '-ms-transform': 'rotate(' + offset + 'deg)',
-    'transform': 'rotate(' + offset + 'deg)',
-  });
-  
-});
+
+
 
 
 
