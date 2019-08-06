@@ -31,6 +31,7 @@ body {
 
 ul{
   padding: 0;
+  bottom:0;
 }
 
 li{
@@ -46,6 +47,10 @@ p{
 a{
   text-decoration: none;
   color: black;
+}
+
+h3{
+  font-size: 1.1em;
 }
 
 
@@ -211,6 +216,7 @@ header{
   width: 0%;
   left: 50%;
 }
+
 
 #nav-icon3.open span:nth-child(2) {
   -webkit-transform: rotate(45deg);
@@ -604,39 +610,93 @@ section{
 
 #services {
 
-
+.card{
+  grid-template-rows: 1fr 40vh
+}
   
 
 .card__description{
 
   justify-content: flex-end;
   align-items:flex-end;
+  margin-top: 5px;
 
   ul{
-    top:5%;
+    margin-top:50px;
   }
 
 }
 
   .card__image img{
-    top:0;
-    height: 100%;
+    top:20px;
+    max-height: 40vh;
   }
   
   li{
-    text-align: center;
+    text-align: left;
+
+    &:hover{
+      color:blue;
+    }
   }
   
 }
 
+#a-img{
+  opacity: 1;
+  transition: opacity 2s ease;
+}
 
+.fade{
+  opacity:0;
+}
+
+.fade1{
+  opacity:0;
+}
+
+
+@media screen and (min-width: $break-phone){
+#team_a{
+  grid-area: team_b;
+}
+
+#team_b{
+  grid-area: team_a;
+}
+}
 
 
 #team{
 
   .double_height{
   grid-template-rows: 1fr 1fr;
+
+
+  @media screen and (min-width: $break-phone) {
+    grid-template-rows: 1fr;
+
+    .card:nth-child(1){
+      
+      img{
+        top:-2.5vh;
+      }
+    }
+
+    .card:nth-child(2){
+      grid-template-areas: "team_a"
+      "team_b";
+
+      img{
+        top:auto;
+        bottom:-2.5vh;
+      }
+    }
+  }
+
 }
+
+
 
 .card__description h3{
   text-align: left;
@@ -650,10 +710,16 @@ section{
   height: 35vh;
   top:0;
   object-fit: cover;
+
+  @media screen and (min-width: $break-phone) {
+    width: 90%;
+  }
   
 }
 
 }
+
+
 
 
 
@@ -904,4 +970,9 @@ section{
     visibility: visible;
     
   }
+}
+
+
+.contacts__description{
+  margin-top:5vh;
 }
