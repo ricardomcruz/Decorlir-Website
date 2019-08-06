@@ -2,27 +2,26 @@
 
 
 
-
-
 var scrollPosition = window.scrollY;
 var headerHeight= document.querySelector('header').offsetHeight;
-
 var windowHeight= screen.height;
-
-var changeToOpaque = windowHeight - headerHeight;
+var changeToOpaque = windowHeight - (headerHeight*2);
 
 console.log(windowHeight);
 console.log(changeToOpaque)
-console.log(scrollPosition);
+
 
 
 var logo= document.querySelector('.logo');
 
 window.addEventListener('scroll', function() {
   
+
+  console.log(scrollPosition);
+
   scrollPosition = window.scrollY;
   
-  if (scrollPosition >= windowHeight) {
+  if (scrollPosition >= changeToOpaque) {
     document.querySelector('header').classList.add('opaque');
     document.getElementById("logo").src = "img/estudonovologo.png";
 
@@ -32,6 +31,7 @@ window.addEventListener('scroll', function() {
       '-o-transform': 'rotate(0deg)',
       '-ms-transform': 'rotate(0deg)',
       'transform': 'rotate(0deg)',
+      'height':'50px'
     });
 
 
@@ -44,6 +44,10 @@ window.addEventListener('scroll', function() {
     document.querySelector('header').classList.remove('opaque');
     document.getElementById("logo").src = "img/logo.png";
     
+
+    $('#logo').css({
+      'height':'60px'
+    });
     
    
       
