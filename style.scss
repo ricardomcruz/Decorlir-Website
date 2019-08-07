@@ -47,11 +47,29 @@ p{
 a{
   text-decoration: none;
   color: black;
+  margin-top:0;
 }
 
 h3{
   font-size: 1.1em;
 }
+
+
+.btn{
+  
+  background-color: #4CAF50; /* Green */
+  border: none;
+  color: black;
+  padding: 10px 15px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 1em;
+  box-shadow: 0px 10px 20px 5px rgba(0,0,0,0.1);
+  border-radius: 10px;
+  
+}
+
 
 
 // main containers
@@ -503,7 +521,7 @@ section{
   min-width: 100%;
   filter: opacity(40%);
   width:100%;
-  object-fit: cover;
+  object-fit: fill;
   z-index: -3;
 }
 
@@ -609,24 +627,24 @@ section{
 
 
 #services {
-
-.card{
-  grid-template-rows: 1fr 40vh
-}
   
-
-.card__description{
-
-  justify-content: flex-end;
-  align-items:flex-end;
-  margin-top: 5px;
-
-  ul{
-    margin-top:50px;
+  .card{
+    grid-template-rows: 1fr 40vh
   }
-
-}
-
+  
+  
+  .card__description{
+    
+    justify-content: flex-end;
+    align-items:flex-end;
+    margin-top: 5px;
+    
+    ul{
+      margin-top:50px;
+    }
+    
+  }
+  
   .card__image img{
     top:20px;
     max-height: 40vh;
@@ -634,13 +652,18 @@ section{
   
   li{
     text-align: left;
-
+    
     &:hover{
       color:blue;
     }
   }
   
 }
+
+
+/*
+
+Actually not working
 
 #a-img{
   opacity: 1;
@@ -655,68 +678,68 @@ section{
   opacity:0;
 }
 
-
+*/
 @media screen and (min-width: $break-phone){
-#team_a{
-  grid-area: team_b;
-}
-
-#team_b{
-  grid-area: team_a;
-}
+  #team_a{
+    grid-area: team_b;
+  }
+  
+  #team_b{
+    grid-area: team_a;
+  }
 }
 
 
 #team{
-
+  
   .double_height{
-  grid-template-rows: 1fr 1fr;
-
-
-  @media screen and (min-width: $break-phone) {
-    grid-template-rows: 1fr;
-
-    .card:nth-child(1){
+    grid-template-rows: 1fr 1fr;
+    
+    
+    @media screen and (min-width: $break-phone) {
+      grid-template-rows: 1fr;
       
-      img{
-        top:-2.5vh;
+      .card:nth-child(1){
+        
+        img{
+          top:-2.5vh;
+        }
+      }
+      
+      .card:nth-child(2){
+        grid-template-areas: "team_a"
+        "team_b";
+        
+        img{
+          top:auto;
+          bottom:-2.5vh;
+        }
       }
     }
-
-    .card:nth-child(2){
-      grid-template-areas: "team_a"
-      "team_b";
-
-      img{
-        top:auto;
-        bottom:-2.5vh;
-      }
-    }
-  }
-
-}
-
-
-
-.card__description h3{
-  text-align: left;
-  width: 100%;
-
-}
-
-.card__image img{
-  max-width:none;
-  width: 100vw;
-  height: 35vh;
-  top:0;
-  object-fit: cover;
-
-  @media screen and (min-width: $break-phone) {
-    width: 90%;
+    
   }
   
-}
-
+  
+  
+  .card__description h3{
+    text-align: left;
+    width: 100%;
+    
+  }
+  
+  .card__image img{
+    max-width:none;
+    width: 100vw;
+    height: 35vh;
+    top:0;
+    object-fit: cover;
+    
+    @media screen and (min-width: $break-phone) {
+      width: 90%;
+    }
+    
+  }
+  
 }
 
 
@@ -726,22 +749,22 @@ section{
 
 //gallery 
 
+
+
+
+#gallery{
+ 
 //slider
 /*
-
 *,
 *:before,
 *:after {
   box-sizing: inherit;
 }
-
-
 #gallery{
   box-sizing: border-box;
   
 }
-
-
 .gallery_container {
   display: flex;
   flex-direction: column;
@@ -751,7 +774,6 @@ section{
   height: 100%;
   
 }
-
 .slider {
   width: 90vw;
   height: 50vh;
@@ -761,13 +783,11 @@ section{
   position: relative;
   
 }
-
 .slider__wrapper {
   height: 100%;
   transition: transform 0.3s;
   
 }
-
 .slide {
   position: relative;
   float: left;
@@ -791,7 +811,6 @@ section{
     
   }
 }
-
 .slide__img {
   width: 100%;
   overflow: visible;
@@ -799,7 +818,6 @@ section{
   object-fit: cover;
   position:absolute;
 }
-
 .slide__text {
   color: black;
   position: relative;
@@ -809,16 +827,13 @@ section{
   padding: 1.25rem;
   
 }
-
 .swipe {
   margin-top: 2.5rem;
 }
-
 .swipe__img {
   transform: translatex(10px);
   animation: moving-finger 0.8s ease-in-out 4 alternate;
 }
-
 @keyframes moving-finger {
   from {
     transform: translatex(10px);
@@ -827,8 +842,6 @@ section{
     transform: translatex(0);
   }
 }
-
-
 */
 
 .gallery_title{
@@ -943,6 +956,8 @@ section{
   to {opacity: 1}
 }
 
+  
+}
 
 //end
 

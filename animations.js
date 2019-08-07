@@ -3,9 +3,13 @@
 
 
 var scrollPosition = window.scrollY;
-var headerHeight= document.querySelector('header').offsetHeight;
+var headerHeight= document.querySelector('header').clientHeight;
 var windowHeight= screen.height;
 var changeToOpaque = windowHeight - (headerHeight*2);
+
+
+
+
 
 
 
@@ -30,10 +34,6 @@ window.addEventListener('scroll', function() {
       'transform': 'rotate(0deg)',
       'height':'50px'
     });
-    
-    
-    
-    
     
     
     
@@ -72,15 +72,6 @@ window.addEventListener('scroll', function() {
 
 
 
-/* not using for now
-function pageHeight() {
-  var scrollHeight= this.document.body.scrollHeight
-}
-*/
-
-//Moving main text left
-
-
 //Moving Main Sentence left
 
 
@@ -103,22 +94,11 @@ $(document).ready(function () {
     $horizontal.css({
       'padding-left': "5%"
     });
-    console.log("gell")
+    
   });
 });
 
 //changing images with scroll
-
-var initialSrc = "https://www.awnash.com/wp-content/uploads/2014/05/aw-upholstery-custom-designer-pieces.jpg";
-var firstScrollSrc = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTDalHYPkM5iaX2YwB6-o2yDNUZ4yyCb9UzTlKZLTaHUe73xGQbrg";
-var secondScrollSrc = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT9wXwdjo9Yt8SeYgi4CS2yoXozo87RJAxv7VQRhSeYbUR_ZnZQ";
-
-
-
-
-
-
-
 
 
 
@@ -160,125 +140,52 @@ changeIcon("a6","img/3.png")
 changeIcon("a7","img/image-test.jpg")
 changeIcon("a8","img/1.png")
 
-//scrollify
 
-const elItems = document.querySelectorAll('li');
-const elSections = document.querySelectorAll('section');
 
-// /* STATE MACHINE
-// ============================= */
-// const scrollMachine = {
-//   initial: 'red',
-//   states: {
-//     red: {
-//       on: {
-//         panend: (event) => {
-//           if (event.deltaY < 0) {
-//             return 'orange';
-//           }
-//         }
-//       }
-//     },
-//     orange: {
-//       on: {
-//         panend: (event) => {
-//           if(event.deltaY > 0) {
-//             return 'red';
-//           }
-//           if (event.deltaY < 0) {
-//             return 'yellow';
-//           }
-//         }
-//       }
-//     },
-//     yellow: {
-//       on: {
-//         panend: (event) => {
-//           if(event.deltaY > 0) {
-//             return 'orange';
-//           }
-//           if (event.deltaY < 0) {
-//             return 'green';
-//           }     
-//         }
-//       }
-//     },
-//     green: {
-//       on: {
-//         panend: (event) => {
-//           if(event.deltaY > 0) {
-//             return 'yellow';
-//           }
-//           if (event.deltaY < 0) {
-//             return 'blue';
-//           }
-//         }
-//       }
-//     },
-//     blue: {
-//       on: {
-//         panend: (event) => {
-//           if(event.deltaY > 0) {
-//             return 'green';
-//           }
-//           if (event.deltaY < 0) {
-//             return 'purple';
-//           }
-//         }
-//       }
-//     },
-//     purple: {
-//       on: {
-//         panend: (event) => {
-//           if(event.deltaY > 0) {
-//             return 'blue';
-//           }
-//         }
-//       }
-//     }
-//   }
-// }
+//changing background images
 
-// let currentState = scrollMachine.initial;
 
-// /* TRANSITION FUNCTION
-// ======================================================= */
-// function transition(state, event) {
-//   const t = scrollMachine.states[state]
-//     .on[event.type] || state;
+
+var initialSrc = "https://www.awnash.com/wp-content/uploads/2014/05/aw-upholstery-custom-designer-pieces.jpg";
+var firstScrollSrc = "https://s3.envato.com/files/236654292/Fabric%20Mobile%20Ed.02/T_Fabric_01_BC.jpg";
+var secondScrollSrc = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT9wXwdjo9Yt8SeYgi4CS2yoXozo87RJAxv7VQRhSeYbUR_ZnZQ";
+
+
+var pageHeight = document.documentElement.scrollHeight
+
+window.addEventListener('scroll', function() {
   
-//   if(typeof t === 'function') {
-//     return t(event) || state;
-//   }
+
   
-//   return t || state;
-// }
-
-// window.addEventListener('resize', event => {
-//   console.log(window.innerHeight);
   
-//   elSections.forEach(elSection => {
-//     elSection.style.height = window.innerHeight;
-//     console.log(elSection[0]("STYLE")[0])
-//   })
-// })
+  if (scrollPosition <= windowHeight) {
 
+    
+    document.getElementById("hero_img").src = initialSrc;
+    document.getElementById("hero_img").style.objectFit = "cover";
+    document.getElementById("hero_img").style.minHeight = "100vh";
 
-/* SCROLLIFY CONFIG
-============================= */
-$.scrollify({
-  section: "section",
-  sectionName: "name",
-  easing: "easeOutExpo",
-  scrollSpeed: 1000,
-  offset: 0,
-  scrollbars: false
+  } else if (scrollPosition*2 > windowHeight) {
+    
+    
+    document.getElementById("hero_img").src = firstScrollSrc;
+    
+    /*document.getElementById("hero_img").style.objectFit = "unset";
+    document.getElementById("hero_img").style.minHeight = "auto";
+    */
+    
+  }
+  
 });
 
-/* EVENT LISTENERS
-============================= */
-elItems.forEach(elItem => {
-  elItem.addEventListener('click', () => {
-    $.scrollify.move(`#${elItem.classList[0]}`);
-  })
-})
+
+
+doc = document; bod = doc.body; htm = document.documentElement;
+
+
+
+
+
+
+
+
