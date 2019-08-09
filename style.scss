@@ -638,7 +638,11 @@ section{
 #services {
   
   .card{
-    grid-template-rows: 1fr 40vh
+    grid-template-rows: 1fr 40vh;
+
+    @media screen and (min-width: $break-phone) {
+      display:none;
+    }
   }
   
   
@@ -670,19 +674,70 @@ section{
 }
 
 
-/*
-Actually not working
-#a-img{
-  opacity: 1;
-  transition: opacity 2s ease;
+.tile_group{
+  display:none;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+
+  @media screen and (min-width: $break-phone) {
+    display:grid;
+  }
+  
+
 }
-.fade{
-  opacity:0;
+
+
+.tile{
+  position: relative;
+  display:flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+
+
+  @media screen and (min-width: $break-phone) {
+    max-height: 30vh;
+  }
+
+
 }
-.fade1{
-  opacity:0;
+
+.tile::after{
+  content: "";
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  opacity: 0.5;
+
+
+
+
 }
-*/
+
+
+.tile p{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50% , -50%);
+  -webkit-transform: translate(-50%, -50%);
+
+  
+
+}
+
+.tile img{
+  object-fit: contain;
+  width: 90%;
+  max-height: 100%;
+  margin:auto;
+}
+
+
+
+
+
+
 @media screen and (min-width: $break-phone){
   #team_a{
     grid-area: team_b;
@@ -695,6 +750,9 @@ Actually not working
 
 
 #team{
+
+
+
   
   .double_height{
     grid-template-rows: 1fr 1fr;
@@ -720,6 +778,51 @@ Actually not working
         }
       }
     }
+
+    @media screen and (min-width: $break-tablet){
+      grid-template-columns: 1fr 1fr;
+    }
+
+
+    .card{
+
+      @media screen and (min-width: $break-tablet){
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr;
+
+        
+        
+      }
+
+    }
+
+    .card:nth-child(2){
+
+      @media screen and (min-width: $break-tablet){
+        grid-template-areas: "team_b team_a";
+
+        img{
+          top:auto;
+          bottom:auto;
+        }
+        
+      }
+
+    }
+
+    .card:nth-child(1){
+
+      @media screen and (min-width: $break-tablet){
+
+        img{
+          top:auto;
+          bottom:auto;
+        }
+        
+      }
+
+    }
+
     
   }
   

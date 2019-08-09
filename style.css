@@ -652,6 +652,12 @@ section .container {
       grid-template-rows: 1fr 40vh;
 }
 
+@media screen and (min-width: 600px) {
+  #services .card {
+    display: none;
+  }
+}
+
 #services .card__description {
   -webkit-box-pack: end;
       -ms-flex-pack: end;
@@ -679,19 +685,67 @@ section .container {
   color: blue;
 }
 
-/*
-Actually not working
-#a-img{
-  opacity: 1;
-  transition: opacity 2s ease;
+.tile_group {
+  display: none;
+  -ms-grid-columns: 1fr 1fr 1fr;
+      grid-template-columns: 1fr 1fr 1fr;
+  -ms-grid-rows: 1fr 1fr 1fr;
+      grid-template-rows: 1fr 1fr 1fr;
 }
-.fade{
-  opacity:0;
+
+@media screen and (min-width: 600px) {
+  .tile_group {
+    display: -ms-grid;
+    display: grid;
+  }
 }
-.fade1{
-  opacity:0;
+
+.tile {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-line-pack: center;
+      align-content: center;
 }
-*/
+
+@media screen and (min-width: 600px) {
+  .tile {
+    max-height: 30vh;
+  }
+}
+
+.tile::after {
+  content: "";
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  opacity: 0.5;
+}
+
+.tile p {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+}
+
+.tile img {
+  -o-object-fit: contain;
+     object-fit: contain;
+  width: 90%;
+  max-height: 100%;
+  margin: auto;
+}
+
 @media screen and (min-width: 600px) {
   #team_a {
     grid-area: team_b;
@@ -720,6 +774,39 @@ Actually not working
   #team .double_height .card:nth-child(2) img {
     top: auto;
     bottom: -2.5vh;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  #team .double_height {
+    -ms-grid-columns: 1fr 1fr;
+        grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  #team .double_height .card {
+    -ms-grid-columns: 1fr 1fr;
+        grid-template-columns: 1fr 1fr;
+    -ms-grid-rows: 1fr;
+        grid-template-rows: 1fr;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  #team .double_height .card:nth-child(2) {
+        grid-template-areas: "team_b team_a";
+  }
+  #team .double_height .card:nth-child(2) img {
+    top: auto;
+    bottom: auto;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  #team .double_height .card:nth-child(1) img {
+    top: auto;
+    bottom: auto;
   }
 }
 
