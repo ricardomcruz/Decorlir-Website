@@ -15,10 +15,22 @@ ul {
   bottom: 0;
 }
 
+@media screen and (min-width: 600px) {
+  ul {
+    padding-top: 20px;
+  }
+}
+
 li {
   list-style-type: none;
   line-height: 1.5em;
   font-size: 1em;
+}
+
+@media screen and (min-width: 600px) {
+  li {
+    font-size: 1.5em;
+  }
 }
 
 p {
@@ -33,6 +45,12 @@ a {
 
 h3 {
   font-size: 1.1em;
+}
+
+@media screen and (min-width: 600px) {
+  h3 {
+    font-size: 1.8em;
+  }
 }
 
 .btn {
@@ -168,8 +186,8 @@ header .menu {
 
 .link {
   position: absolute;
-  margin-top: -15vh;
-  height: 15vh;
+  margin-top: calc(-15vh + 2px);
+  height: calc(-15vh + 2px);
 }
 
 @media screen and (min-width: 1200px) {
@@ -327,7 +345,8 @@ footer {
   height: 15vh;
   z-index: -1;
   background-color: transparent;
-  padding-bottom: 5%;
+  padding-bottom: 2vh;
+  padding-top: 2vh;
 }
 
 @media screen and (min-width: 600px) {
@@ -539,8 +558,8 @@ section .container {
   -webkit-filter: opacity(40%);
           filter: opacity(40%);
   width: 100%;
-  -o-object-fit: fill;
-     object-fit: fill;
+  -o-object-fit: cover;
+     object-fit: cover;
   z-index: -3;
 }
 
@@ -580,7 +599,7 @@ section .container {
 }
 
 #contacts {
-  height: 70vh;
+  height: 67vh;
 }
 
 .card {
