@@ -98,6 +98,18 @@ $(document).ready(function () {
   });
 });
 
+
+
+
+
+
+
+
+
+
+
+
+
 //changing images with scroll
 
 
