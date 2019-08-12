@@ -637,9 +637,39 @@ section{
 
 #services {
   
+  .light{
+    background-color: rgb(129, 201, 131);
+  }
+
+  .light:hover{
+    transition: background-color 1000ms linear;
+    background-color: transparent;
+  }
+  
+
+  .dark{
+    background-color: rgb(79, 121, 80);
+  }
+
+
+  .dark:hover{
+    background-color: transparent;
+  }
+  @media screen and (min-width: $break-phone) {
+    .container{
+      margin: 0 0;
+      margin-top:15vh;
+    }
+
+    .single_height{
+      height: 85vh;
+    }
+  }
+  
+  
   .card{
     grid-template-rows: 1fr 40vh;
-
+    
     @media screen and (min-width: $break-phone) {
       display:none;
     }
@@ -678,12 +708,12 @@ section{
   display:none;
   grid-template-columns: 1fr 1fr 1fr;
   grid-template-rows: 1fr 1fr 1fr;
-
+  
   @media screen and (min-width: $break-phone) {
     display:grid;
   }
   
-
+  
 }
 
 
@@ -693,44 +723,44 @@ section{
   flex-direction: column;
   justify-content: center;
   align-content: center;
-
-
+  
+  
   @media screen and (min-width: $break-phone) {
     max-height: 30vh;
   }
-
-
-}
-
-.tile::after{
-  content: "";
-  position: absolute;
-  height: 100%;
-  width: 100%;
-  opacity: 0.5;
-
-
-
-
-}
-
-
-.tile p{
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50% , -50%);
-  -webkit-transform: translate(-50%, -50%);
-
   
-
+  
 }
+
+
+
+
+.tile h3{
+  position: absolute;
+  margin:auto;
+  top: 0; left: 0; bottom: 0; right: 0;
+  text-align: center;
+  font-weight: 500;
+  transform: translateY(40%);
+}
+
+
+
+
+
 
 .tile img{
   object-fit: contain;
   width: 90%;
-  max-height: 100%;
+  height: 25vh;
   margin:auto;
+  opacity: 0;
+  
+  &:hover{
+    opacity: 1;
+  }
+  
+ 
 }
 
 
@@ -750,9 +780,9 @@ section{
 
 
 #team{
-
-
-
+  
+  
+  
   
   .double_height{
     grid-template-rows: 1fr 1fr;
@@ -778,51 +808,51 @@ section{
         }
       }
     }
-
+    
     @media screen and (min-width: $break-tablet){
       grid-template-columns: 1fr 1fr;
     }
-
-
+    
+    
     .card{
-
+      
       @media screen and (min-width: $break-tablet){
         grid-template-columns: 1fr 1fr;
         grid-template-rows: 1fr;
-
+        
         
         
       }
-
+      
     }
-
+    
     .card:nth-child(2){
-
+      
       @media screen and (min-width: $break-tablet){
         grid-template-areas: "team_b team_a";
-
+        
         img{
           top:auto;
           bottom:auto;
         }
         
       }
-
+      
     }
-
+    
     .card:nth-child(1){
-
+      
       @media screen and (min-width: $break-tablet){
-
+        
         img{
           top:auto;
           bottom:auto;
         }
         
       }
-
+      
     }
-
+    
     
   }
   
@@ -860,209 +890,209 @@ section{
 
 
 #gallery{
- 
-//slider
-/*
-*,
-*:before,
-*:after {
-  box-sizing: inherit;
-}
-#gallery{
-  box-sizing: border-box;
   
-}
-.gallery_container {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  height: 100%;
-  
-}
-.slider {
-  width: 90vw;
-  height: 50vh;
-  background: black;
-  overflow: hidden;
-  margin: 5vh 0;
-  position: relative;
-  
-}
-.slider__wrapper {
-  height: 100%;
-  transition: transform 0.3s;
-  
-}
-.slide {
-  position: relative;
-  float: left;
-  width: 90vw;
-  height: 100%;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  -o-user-select: none;
-  pointer-events: none;
-  
-  
-  &::before {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 0;
+  //slider
+  /*
+  *,
+  *:before,
+  *:after {
+    box-sizing: inherit;
+  }
+  #gallery{
+    box-sizing: border-box;
+    
+  }
+  .gallery_container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     width: 100%;
-    height: 40%;
+    height: 100%;
+    
+  }
+  .slider {
+    width: 90vw;
+    height: 50vh;
+    background: black;
+    overflow: hidden;
+    margin: 5vh 0;
+    position: relative;
+    
+  }
+  .slider__wrapper {
+    height: 100%;
+    transition: transform 0.3s;
+    
+  }
+  .slide {
+    position: relative;
+    float: left;
+    width: 90vw;
+    height: 100%;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    -o-user-select: none;
+    pointer-events: none;
     
     
+    &::before {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 40%;
+      
+      
+    }
   }
-}
-.slide__img {
-  width: 100%;
-  overflow: visible;
-  
-  object-fit: cover;
-  position:absolute;
-}
-.slide__text {
-  color: black;
-  position: relative;
-  color: white;
-  bottom: -70vh;
-  left: 0;
-  padding: 1.25rem;
-  
-}
-.swipe {
-  margin-top: 2.5rem;
-}
-.swipe__img {
-  transform: translatex(10px);
-  animation: moving-finger 0.8s ease-in-out 4 alternate;
-}
-@keyframes moving-finger {
-  from {
-    transform: translatex(10px);
-  }
-  to {
-    transform: translatex(0);
-  }
-}
-*/
-
-.gallery_title{
-  text-align: center;
-  height: 10vh;
-  padding: 0;
-  margin: 0;
-  display:flex;
-  flex-direction: column;
-  justify-content: center;
-}
-
-
-
-* {box-sizing:border-box}
-
-/* Slideshow container */
-.slideshow-container {
-  max-width: 1000px;
-  position: relative;
-  margin: auto;
-  
-  img{
-    height: 65vh;
+  .slide__img {
+    width: 100%;
+    overflow: visible;
+    
     object-fit: cover;
+    position:absolute;
+  }
+  .slide__text {
+    color: black;
+    position: relative;
+    color: white;
+    bottom: -70vh;
+    left: 0;
+    padding: 1.25rem;
+    
+  }
+  .swipe {
+    margin-top: 2.5rem;
+  }
+  .swipe__img {
+    transform: translatex(10px);
+    animation: moving-finger 0.8s ease-in-out 4 alternate;
+  }
+  @keyframes moving-finger {
+    from {
+      transform: translatex(10px);
+    }
+    to {
+      transform: translatex(0);
+    }
+  }
+  */
+  
+  .gallery_title{
+    text-align: center;
+    height: 10vh;
+    padding: 0;
+    margin: 0;
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
   }
   
-}
-
-/* Hide the images by default */
-.mySlides {
-  display: none;
-}
-
-/* Next & previous buttons */
-.prev, .next {
-  cursor: pointer;
-  position: absolute;
-  top: 32.5vh;
-  width: auto;
-  margin-top: -22px;
-  padding: 16px;
-  color: white;
-  font-weight: bold;
-  font-size: 18px;
-  transition: 0.6s ease;
-  border-radius: 0 3px 3px 0;
-  user-select: none;
-}
-
-/* Position the "next button" to the right */
-.next {
-  right: 0;
-  border-radius: 3px 0 0 3px;
-}
-
-/* On hover, add a black background color with a little bit see-through */
-.prev:hover, .next:hover {
-  background-color: rgba(0,0,0,0.8);
-}
-
-/* Caption text */
-.text {
-  color: black;
-  font-size: 1em;
-  padding-top: 8px;
-  position: relative;
-  width: 100%;
-  text-align: left;
-}
-
-/* Number text (1/3 etc) */
-.numbertext {
-  color: #f2f2f2;
-  font-size: 12px;
-  padding: 8px 12px;
-  position: absolute;
-  top: 0;
-}
-
-/* The dots/bullets/indicators */
-.dot {
-  cursor: pointer;
-  height: 15px;
-  width: 15px;
-  margin: 0 2px;
-  background-color: #bbb;
-  border-radius: 50%;
-  display: inline-block;
-  transition: background-color 0.6s ease;
-}
-
-.active, .dot:hover {
-  background-color: #717171;
-}
-
-/* Fading animation */
-.fade {
-  -webkit-animation-name: fade;
-  -webkit-animation-duration: 1.5s;
-  animation-name: fade;
-  animation-duration: 1.5s;
-}
-
-@-webkit-keyframes fade {
-  from {opacity: .4} 
-  to {opacity: 1}
-}
-
-@keyframes fade {
-  from {opacity: .4} 
-  to {opacity: 1}
-}
-
+  
+  
+  * {box-sizing:border-box}
+  
+  /* Slideshow container */
+  .slideshow-container {
+    max-width: 1000px;
+    position: relative;
+    margin: auto;
+    
+    img{
+      height: 65vh;
+      object-fit: cover;
+    }
+    
+  }
+  
+  /* Hide the images by default */
+  .mySlides {
+    display: none;
+  }
+  
+  /* Next & previous buttons */
+  .prev, .next {
+    cursor: pointer;
+    position: absolute;
+    top: 32.5vh;
+    width: auto;
+    margin-top: -22px;
+    padding: 16px;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+  }
+  
+  /* Position the "next button" to the right */
+  .next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+  }
+  
+  /* On hover, add a black background color with a little bit see-through */
+  .prev:hover, .next:hover {
+    background-color: rgba(0,0,0,0.8);
+  }
+  
+  /* Caption text */
+  .text {
+    color: black;
+    font-size: 1em;
+    padding-top: 8px;
+    position: relative;
+    width: 100%;
+    text-align: left;
+  }
+  
+  /* Number text (1/3 etc) */
+  .numbertext {
+    color: #f2f2f2;
+    font-size: 12px;
+    padding: 8px 12px;
+    position: absolute;
+    top: 0;
+  }
+  
+  /* The dots/bullets/indicators */
+  .dot {
+    cursor: pointer;
+    height: 15px;
+    width: 15px;
+    margin: 0 2px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.6s ease;
+  }
+  
+  .active, .dot:hover {
+    background-color: #717171;
+  }
+  
+  /* Fading animation */
+  .fade {
+    -webkit-animation-name: fade;
+    -webkit-animation-duration: 1.5s;
+    animation-name: fade;
+    animation-duration: 1.5s;
+  }
+  
+  @-webkit-keyframes fade {
+    from {opacity: .4} 
+    to {opacity: 1}
+  }
+  
+  @keyframes fade {
+    from {opacity: .4} 
+    to {opacity: 1}
+  }
+  
   
 }
 
@@ -1081,20 +1111,74 @@ section{
 }
 
 
-#map {
-  display:none;
-  visibility: hide;
-  width: 100%;
-  height: 400px;
-  background-color: grey;
-  @media screen and (min-width: $break-tablet) {
-    display:block;
-    visibility: visible;
-    
-  }
-}
+
+
+
 
 
 .contacts__description{
   margin-top:5vh;
+}
+
+#contacts{
+  
+  .single_height{
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr;
+    height: 67vh;
+    min-height: 67vh;
+    margin-bottom: 19vh;
+    
+    @media screen and (min-width: $break-phone) {
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: 30% 1fr;
+      grid-template-areas: ". ."
+      " map map";
+      
+    }
+  }
+  
+  
+  
+  #map {
+    grid-area:map;
+    display:none;
+    visibility: hide;
+    width: 100%;
+    
+    
+    
+    @media screen and (min-width: $break-phone) {
+      display:block;
+      visibility: visible;
+      padding: 5% 0;
+      opacity: 1;
+      
+    }
+    
+  }
+  
+  #form{
+    grid-area: map;
+    display:none;
+    opacity: 0;
+    
+  }
+  
+  .js_show{
+    display:block!important;
+    opacity: 1 !important;
+    transition: opacity 1s ease-in-out;
+    
+  }
+  
+  .js_hide{
+    display:none!important;
+    transition: opacity 1s ease-in-out;
+    opacity: 0 !important;
+    
+  }
+  
+  
 }
