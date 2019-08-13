@@ -28,10 +28,10 @@ function toggleMap(){
     
     
     y.classList.toggle("form_show");
-    if (btn.innerHTML == "ver mapa") {
-        btn.innerHTML = "ocultar mapa";
+    if (btn1.innerHTML == "ver mapa") {
+        btn1.innerHTML = "ocultar mapa";
       } else {
-        btn.innerHTML = "ver mapa";
+        btn1.innerHTML = "ver mapa";
       }
 
 }
