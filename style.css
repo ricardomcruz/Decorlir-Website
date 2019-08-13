@@ -598,10 +598,6 @@ section .container {
   margin-top: 0;
 }
 
-#contacts {
-  height: 67vh;
-}
-
 .card {
   display: -ms-grid;
   display: grid;
@@ -1093,65 +1089,45 @@ section .container {
   }
 }
 
-.contacts__description {
-  margin-top: 5vh;
-}
-
-#contacts .single_height {
-  display: -ms-grid;
-  display: grid;
-  -ms-grid-columns: 1fr;
-      grid-template-columns: 1fr;
-  -ms-grid-rows: 1fr 1fr;
-      grid-template-rows: 1fr 1fr;
-  height: 67vh;
+#contacts .container {
   min-height: 67vh;
-  margin-bottom: 19vh;
+  margin-bottom: 18vh;
 }
 
-@media screen and (min-width: 600px) {
-  #contacts .single_height {
-    -ms-grid-columns: 1fr 1fr;
-        grid-template-columns: 1fr 1fr;
-    -ms-grid-rows: 30% 1fr;
-        grid-template-rows: 30% 1fr;
-        grid-template-areas: ". ." " map map";
-  }
+#contacts .div_btn {
+  height: 8vh;
 }
 
-#contacts #map {
-  grid-area: map;
+#contacts #gmap_canvas {
+  height: 50vh;
   display: none;
-  visibility: hide;
-  width: 100%;
 }
 
-@media screen and (min-width: 600px) {
-  #contacts #map {
-    display: block;
-    visibility: visible;
-    padding: 5% 0;
-    opacity: 1;
-  }
-}
-
-#contacts #form {
-  grid-area: map;
+#contacts form {
+  min-height: 35vh;
   display: none;
-  opacity: 0;
 }
 
-#contacts .js_show {
+#contacts form input[type="text"], #contacts form input[type="email"], #contacts form select {
+  margin-top: 5px;
+  width: 70%;
+  display: block;
+  background-color: green;
+}
+
+#contacts form p {
+  margin: 10px 0 5px 0;
+}
+
+#contacts form b {
+  margin: 15px 0 10px 0;
+}
+
+#contacts .contacts__description {
+  height: 20vh;
+}
+
+.form_show {
   display: block !important;
-  opacity: 1 !important;
-  -webkit-transition: opacity 1s ease-in-out;
-  transition: opacity 1s ease-in-out;
-}
-
-#contacts .js_hide {
-  display: none !important;
-  -webkit-transition: opacity 1s ease-in-out;
-  transition: opacity 1s ease-in-out;
-  opacity: 0 !important;
 }
 /*# sourceMappingURL=style.css.map */

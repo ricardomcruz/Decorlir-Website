@@ -579,9 +579,7 @@ section{
 }
 
 
-#contacts{
-  height: 67vh;
-}
+
 
 //end
 
@@ -1116,69 +1114,58 @@ section{
 
 
 
-.contacts__description{
-  margin-top:5vh;
-}
 
 #contacts{
   
-  .single_height{
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: 1fr 1fr;
-    height: 67vh;
-    min-height: 67vh;
-    margin-bottom: 19vh;
-    
-    @media screen and (min-width: $break-phone) {
-      grid-template-columns: 1fr 1fr;
-      grid-template-rows: 30% 1fr;
-      grid-template-areas: ". ."
-      " map map";
-      
-    }
+.container{
+  min-height: 67vh;
+  margin-bottom:18vh;
+}
+  
+.div_btn{
+  height: 8vh;
+}
+  
+
+#gmap_canvas{
+  height: 50vh;
+  display:none;
+}
+
+form{
+  min-height: 35vh;
+  display:none;
+
+
+  input[type="text"], input[type="email"], select {
+    margin-top:5px;
+    width: 70%;
+    display:block;
+    background-color: green;
   }
-  
-  
-  
-  #map {
-    grid-area:map;
-    display:none;
-    visibility: hide;
-    width: 100%;
-    
-    
-    
-    @media screen and (min-width: $break-phone) {
-      display:block;
-      visibility: visible;
-      padding: 5% 0;
-      opacity: 1;
-      
-    }
-    
+
+
+  p{
+    margin:10px 0 5px 0;
   }
-  
-  #form{
-    grid-area: map;
-    display:none;
-    opacity: 0;
-    
+
+  b{
+    margin:15px 0 10px 0;
   }
-  
-  .js_show{
-    display:block!important;
-    opacity: 1 !important;
-    transition: opacity 1s ease-in-out;
-    
-  }
-  
-  .js_hide{
-    display:none!important;
-    transition: opacity 1s ease-in-out;
-    opacity: 0 !important;
-    
-  }
-  
-  
+
+
+}
+
+.contacts__description{
+  height: 20vh;
+}
+
+
+
+}
+
+
+
+.form_show{
+  display:block!important;
 }

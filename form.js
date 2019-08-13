@@ -1,10 +1,19 @@
-function switchContact(){
-    var x = document.getElementById("form");
-    var y = document.getElementById("map");
-    x.classList.toggle("js_show");
-    y.classList.toggle("js_show");
-    x.classList.toggle("js_hide");
-    y.classList.toggle("js_hide");
+var x = document.querySelector("form");
+var y = document.getElementById("gmap_canvas");
+
+
+function toggleForm(){
+    
+    
+        x.classList.toggle("form_show");
+   
 }
 
 
+
+function toggleMap(){
+    
+    
+    y.classList.toggle("form_show");
+
+}
