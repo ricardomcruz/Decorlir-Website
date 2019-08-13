@@ -99,6 +99,13 @@ h4{
   }
 }
 
+#services .container{
+@media screen and (min-width: $break-laptop) {
+  max-width: 100vw;
+  margin: auto;
+}
+}
+
 
 
 //header and footer
@@ -677,6 +684,7 @@ p{
     margin: 0 0;
     margin-top:15vh;
 
+
   }
   @media screen and (min-width: $break-phone) {
     .container{
@@ -843,6 +851,9 @@ p{
       .card__description, .card__image{
       height: 42.5vh;
     }
+
+
+    
       
       @media screen and (min-width: $break-tablet){
         grid-template-columns: 1fr 1fr;
@@ -1150,6 +1161,24 @@ p{
 .container{
   min-height: 67vh;
   margin-bottom:18vh;
+  @media screen and (min-width: $break-phone) {
+    display:grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 10vh 1fr;
+    grid-template-areas: "address contact toggle"
+                         "map map map";
+                         height: 67vh;
+
+
+    .contacts__description{
+      width: 50%;
+    }
+
+    .div_btn{
+      display:none;
+    }
+      
+    }
 }
   
 .div_btn{
@@ -1161,12 +1190,31 @@ p{
   height: 45vh;
   display:none;
   margin: 5vh 0;
+  @media screen and (min-width: $break-phone) {
+    grid-area: map;
+    display:block;
+    
+    }
 }
 
 form{
   min-height: 35vh;
   display:none;
   padding: 10vh 0 5vh 0;
+
+  @media screen and (min-width: $break-phone) {
+    display:none;
+    width: 100%;
+
+    div{
+      display: block;
+      float: left;
+      width: 20vh;
+      padding-right: 2vw;
+      margin-bottom: 5vh;
+    }
+    
+    }
 
 
   input[type="text"], input[type="email"], select {
@@ -1197,8 +1245,39 @@ form{
 
 }
 
+@media screen and (min-width: $break-phone) {
+  
+  #contact_div{
+    grid-area: contact;
+  }
 
+  #address{
+    grid-area: address;
+  }
+
+  #map{
+    display: none;
+    grid-area: map;
+  }
+  
+
+#form{
+  grid-area: map;
+}
+
+  }
 
 .form_show{
   display:block!important;
+}
+
+#toggleMapForm{
+  display:none;
+  @media screen and (min-width: $break-phone) {
+display:flex;
+grid-area: toggle;
+
+
+  }
+
 }

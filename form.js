@@ -1,9 +1,9 @@
 var x = document.querySelector("form");
 var y = document.getElementById("gmap_canvas");
-
+var z = document.getElementById("map");
 var btn1 = document.getElementById("btn_map");
 var btn2 = document.getElementById("btn_form");
-
+var btn3 = document.getElementById("toggleMapFormBtn");
 
 function toggleForm(){
     
@@ -33,5 +33,20 @@ function toggleMap(){
       } else {
         btn1.innerHTML = "ver mapa";
       }
+
+}
+
+
+function toggleMapForm(){
+    
+    
+  z.classList.toggle("form_show");
+  x.classList.toggle("form_show");
+
+  if (btn3.innerHTML == "Ver Mapa") {
+      btn3.innerHTML = "Pedir Orçamento Gratuito";
+    } else {
+      btn3.innerHTML = "Ver Mapa";
+    }
 
 }

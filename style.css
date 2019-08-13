@@ -87,6 +87,13 @@ h4 {
   }
 }
 
+@media screen and (min-width: 1600px) {
+  #services .container {
+    max-width: 100vw;
+    margin: auto;
+  }
+}
+
 header {
   background-color: transparent;
   height: 15vh;
@@ -1125,6 +1132,25 @@ section .container {
   margin-bottom: 18vh;
 }
 
+@media screen and (min-width: 600px) {
+  #contacts .container {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 1fr 1fr 1fr;
+        grid-template-columns: 1fr 1fr 1fr;
+    -ms-grid-rows: 10vh 1fr;
+        grid-template-rows: 10vh 1fr;
+        grid-template-areas: "address contact toggle" "map map map";
+    height: 67vh;
+  }
+  #contacts .container .contacts__description {
+    width: 50%;
+  }
+  #contacts .container .div_btn {
+    display: none;
+  }
+}
+
 #contacts .div_btn {
   height: 8vh;
 }
@@ -1135,10 +1161,31 @@ section .container {
   margin: 5vh 0;
 }
 
+@media screen and (min-width: 600px) {
+  #contacts #gmap_canvas {
+    grid-area: map;
+    display: block;
+  }
+}
+
 #contacts form {
   min-height: 35vh;
   display: none;
   padding: 10vh 0 5vh 0;
+}
+
+@media screen and (min-width: 600px) {
+  #contacts form {
+    display: none;
+    width: 100%;
+  }
+  #contacts form div {
+    display: block;
+    float: left;
+    width: 20vh;
+    padding-right: 2vw;
+    margin-bottom: 5vh;
+  }
 }
 
 #contacts form input[type="text"], #contacts form input[type="email"], #contacts form select {
@@ -1161,7 +1208,36 @@ section .container {
   height: 20vh;
 }
 
+@media screen and (min-width: 600px) {
+  #contact_div {
+    grid-area: contact;
+  }
+  #address {
+    grid-area: address;
+  }
+  #map {
+    display: none;
+    grid-area: map;
+  }
+  #form {
+    grid-area: map;
+  }
+}
+
 .form_show {
   display: block !important;
+}
+
+#toggleMapForm {
+  display: none;
+}
+
+@media screen and (min-width: 600px) {
+  #toggleMapForm {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    grid-area: toggle;
+  }
 }
 /*# sourceMappingURL=style.css.map */

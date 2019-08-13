@@ -189,39 +189,39 @@
                 </div>
                 
                 <div class="tile_group ">
-                    <div class="tile  light hvr-sweep-to-right" >
+                    <div class="tile  light hvr-sweep-to-right" data-aos="flip-up" >
                         <h3>Sofás</h3>
                         <img src="img/sofa.png" alt="">
                     </div>
-                    <div class="tile dark hvr-sweep-to-left" >
+                    <div class="tile dark hvr-sweep-to-left" data-aos="flip-down" >
                         <h3>Cadeiras</h3>
                         <img src="img/1.png" alt="">
                     </div>
-                    <div class="tile light hvr-sweep-to-right" >
+                    <div class="tile light hvr-sweep-to-right" data-aos="flip-left" >
                         <h3>Chaise Longues</h3>
-                        <img src="img/chaiselongue.png" alt="">
+                        <img src="img/chaiselongue.png" alt="" data-aos="flip-right">
                     </div>
                     <div class="tile dark hvr-sweep-to-top" >
                         <h3>Poltronas</h3>
-                        <img src="img/poltrona.png" alt="">
+                        <img src="img/poltrona.png" alt="" data-aos="flip-up">
                     </div>
-                    <div class="tile light hvr-sweep-to-top" >
+                    <div class="tile light hvr-sweep-to-top"  data-aos="flip-up">
                         <h3>Artigos Decorativos</h3>
                         <img src="img/1.png" alt="">
                     </div>
-                    <div class="tile dark hvr-sweep-to-bottom" >
+                    <div class="tile dark hvr-sweep-to-bottom"  data-aos="flip-down">
                         <h3>Cortinados</h3>
                         <img src="img/1.png" alt="">
                     </div>
-                    <div class="tile light hvr-sweep-to-top" >
+                    <div class="tile light hvr-sweep-to-top" data-aos="flip-up">
                         <h3>Estores</h3>
                         <img src="img/1.png" alt="">
                     </div>
-                    <div class="tile dark hvr-sweep-to-bottom" >
+                    <div class="tile dark hvr-sweep-to-bottom" data-aos="flip-down" >
                         <h3>Cabeçeiras</h3>
                         <img src="img/cabeceira.png" alt="">
                     </div>
-                    <div class="tile light hvr-sweep-to-left" >
+                    <div class="tile light hvr-sweep-to-left" data-aos="flip-up">
                         <h3>Colchas</h3>
                         <img src="img/colcha.png" alt="">
                     </div>
@@ -282,7 +282,7 @@
                     
                     
                     
-                    <div class="contacts__description">
+                    <div class="contacts__description" id="address">
                         <b>Endereço</b>
                         
                         <p> Rua de Coimbra, 4 B/C <br>
@@ -292,7 +292,7 @@
                             
                         </div>
                         
-                        <div id="map">
+                        <div id="map" class="form_show">
                             
                             <div class="div_btn"><a id="btn_map"class="btn"  onclick="toggleMap()">ver mapa</a></div>
                             
@@ -308,7 +308,7 @@
                             
                             
                             
-                            <div>
+                            <div id="contact_div">
                                 <b>Contacto</b>
                                 <p  id="no" value="Hello World">geral@decorlir.pt <br>
                                     <a href="tel:+351219811710">Tel. 219811710 </a>
@@ -326,6 +326,7 @@
                                   <div class="div_btn"> <a class="btn" onclick="toggleForm()" href="#btn_form" id="btn_form">Pedir Orçamento Gratuito</a></div> 
                                 
                                   <form>
+                                      <div>
                                     
 
                                     <p>Preencha o seguinte formulário caso pretenda que lhe façamos um  <br><b> orçamento gratuíto e sem compromisso.</b></p>
@@ -359,7 +360,8 @@
                                         <option value="">Intermediário</option>
                                     </select><br>
 
-
+                                </div>
+                                <div>
                                     <p> <b> Informações do Pedido </b> </p>
 
                                      <p> Finalidade</p>
@@ -645,13 +647,32 @@
 
                                     <p> Morada</p> 
                                     <input type="text" name="address"><br>
+
+                                </div>
+                                <div>
                                     
-                                   <p> Descrição do pedido </p><br>
+                                   <p> <b> Descrição do pedido</b> </p><br>
+
+                                   <p>Ao descrever o seu pedido</p>
+                                   <ul>
+                                       <li>Dimensões</li>
+                                       <li>Quantidade</li>
+                                       <li>Tecidos</li>
+                                   </ul>
+
                                     
-                                    <textarea name="" id="" cols="30" rows="10" placeholder="Coloque informações detalhadas sobre o seu pedido. <br> XCasa "></textarea> <br>
-                                    <input type="submit" value="Enviar">
+                                    <textarea name="" id="" cols="30" rows="10" placeholder="Coloque informações detalhadas sobre o seu pedido. <br> XCasa "></textarea>
                                     
+                                        Select images: <input type="file" name="img" multiple>
+                                        <input type="submit">
+                                       <br>
+            
+                                </div>
                                 </form>
+                            </div>
+
+                            <div id="toggleMapForm">
+                                <button id="toggleMapFormBtn" onclick="toggleMapForm()">Pedir Orçamento Gratuito</button>
                             </div>
                             
                         </div>
